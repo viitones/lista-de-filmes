@@ -1,0 +1,362 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+  body {
+    min-height: 100vh;
+
+    background: linear-gradient(
+    180deg, 
+        rgb(20, 20, 20) 0%, 
+        rgb(31, 31, 31) 100% /* 50,50,50 */
+    );
+    display: flex;
+    align-items:flex-start;
+    justify-content: center;
+    /* margin-top: 20px; */
+
+    color: white;
+  }
+
+  .container {
+    width: 90%;
+    min-width: 500px;
+
+    /* border: 2px solid rgb(185, 185, 185); */
+    /* border-radius: 5px; */
+    /* padding: 30px 40px; */
+  }
+
+  .new-film-container {
+    /* position: sticky; */
+    top: 0;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    
+    max-width: 60%;
+    margin: 0 auto;
+    background-color: #181818;
+    padding: 30px 20px;
+    border-radius: 3px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .new-film-container input {
+    flex-shrink: 0;
+    flex-grow: 1;
+    min-width: 250px;
+    max-width: 50%;
+
+
+    padding: 5px;
+    font-size: 1rem;
+    color: white;
+    border: 1px solid rgb(185, 185, 185);
+    background-color: rgb(18,18,18);
+    font-weight: 500;
+  }
+
+  .new-film-container input::placeholder {
+    color: rgb(182, 182, 182);
+  }
+
+  .new-film-container input:focus {
+    outline: none;
+    border-color: #fff;
+  }
+
+  select.film-genres {
+    flex-grow: 0;
+    flex-shrink: 1;
+    margin-left: 1px;
+    background-color: rgb(36, 36, 36);
+    color: white;
+    border-color: rgb(185, 185, 185);
+  }
+
+  div.add-film-btn {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .add-film-btn {
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    color: white;
+    background-color: rgba(42,42,42,.6);
+    border-radius: 30px;
+    padding: 10px;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+
+  .add-film-btn:hover {
+    border-color: #fff;
+    background-color: rgba(70, 70, 70, 0.6);
+  }
+
+  /* Container de plataformas e filmes */
+
+  .films-container {
+    width: 100%;
+    
+    margin-top: 30px;
+    padding: 30px;
+    background-color: rgb(24, 24, 24);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+    /* overflow-y: auto; */
+  }
+  
+  .heading-2 {
+    position: relative;
+    top: -25px;
+    left: 50px;
+
+    /* padding: 10px 0; */
+    color: #fff;
+  }
+
+  .films-list-container {
+    display: flex;
+    margin-top: -20px;
+  }
+
+  .platform-container {
+    width: 25%;
+    /* min-height: 680px; */
+    
+    margin: 0 5px;
+    /* border: 2px solid rgba(255, 255, 255, 0.5); */
+    background-color: rgb(47, 47, 47);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5)
+  }
+
+  .platform-title {
+    height:75px; /* aumentar tamanho e centralizar dps */
+    text-align: center;
+    margin: auto;
+    color: red;
+    background-color: rgb(238, 238, 238);
+  }
+
+
+  /* Logos das Plataformas */
+  .disney-svg {
+    transform: scale(1.3, 1.3);
+  }
+
+  #netflix-title {
+    background-color: #101010;
+  }
+
+  #disney-title {
+    /* background-color: #120d3c; */
+
+    /* background: #090223;
+  background: radial-gradient(circle, #2b3183 0%, rgba(8,0,31,1) 100%); */
+
+  background: #090223;
+  background: linear-gradient(0deg, #2b3183 0%, rgba(8,0,31,1) 100%);
+  }
+
+  #prime-title {
+    background-color: #1c232f;
+  }
+
+  #globo-title {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background: linear-gradient(
+      135deg, 
+      rgb(238, 32, 60) 0%, 
+        rgb(241, 123, 13) 100%
+      );
+    
+  }
+
+  #globo-svg {
+    max-width: 200px;
+    margin: 0 20px;
+    fill: white;
+  }
+
+  .film-list {
+    height: 650px;
+    overflow-y:auto;
+  }
+
+  /* Itens  */
+
+  .film-item {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    /* margin-top: 10px; */
+    /* margin-bottom: 10px; */
+    padding: 15px 0;
+    border-bottom: 0.01rem solid rgba(0, 0, 0, 0.1);
+  }
+
+  /* .film-item:first-child {
+    padding: 0 0 15px 0;
+  } */
+
+  .film-item:last-child {
+    border-bottom: none;
+    /* padding: 15px 0 0 0; */
+  }
+
+  .film-item p {
+    word-break: break-all;
+    flex-grow: 1;
+    margin-left: 15px;
+  }
+
+  /* .film-item p::before, .film-item p::after {
+    content: "\00a0 \00a0";
+  } */
+
+  /* .film-item p::before {
+    content: "- ";
+  } */
+
+  /* Ícones */
+
+  .stars  {
+    flex-shrink: 0;
+    width: 90px;
+  }
+
+  .watched .stars {
+    display: initial;
+  }
+
+  .star {
+    color: rgb(31, 31, 31);
+  }
+
+  
+  .watched .star {
+    color: rgb(20, 20, 20);
+  }
+
+  .star.active {
+    color: rgb(255, 255, 255);
+  }
+
+  .watched .star.star.active {
+    color: rgb(255, 221, 0);
+  }
+
+  .icons {
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content:space-evenly;
+    width: 100px;
+  }
+
+  .icon {
+    /* text-align: center; */
+
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    color: white;
+    background-color: rgba(42,42,42,.6);
+    border-radius: 30px;
+    cursor: pointer;
+  }
+
+  .icon:hover {
+    border-color: #fff;
+    background-color: rgba(70, 70, 70, 0.6);    
+  }
+
+  .watched-btn {
+    padding: 9.5px;
+  }
+
+  .delete-btn {
+    padding: 9.5px 12.5px;
+  }
+
+  /* Utilities */
+  .error {
+    border: 2px solid red !important;
+  }
+
+  .error::placeholder {
+    color: rgb(255, 82, 82);
+  }
+
+  .watched {
+    background-color: rgb(31, 31, 31);
+    box-shadow: 1px 1px 1px 1px inset rgb(24, 24, 24);
+    border: 1px groove rgba(0, 0, 0, 0.2);
+  }
+
+  .watched p {
+    /* text-decoration: line-through; */
+    /* color: rgba(0, 0, 0, 0.6); */
+    color: rgb(172, 172, 172);
+  }
+
+  .watched .icon {
+    border: 2px solid rgba(170, 170, 170, 0.7);
+    color: rgb(185, 185, 185);
+    background-color: rgba(42,42,42,.6);
+  }
+
+  .watched .icon:hover {
+    border-color: #fff;
+    color: #fff;
+    background-color: rgba(70, 70, 70, 0.6);  
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 5px;
+    /* border-radius: 5px; */
+  }
+
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(63, 63, 63); 
+    /* border-radius: 10px; */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgb(29, 29, 29); 
+    /* border-radius: 5px; */
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(14, 14, 14); 
+  }
+
+  @media (max-width: 1600px) {
+    .films-list-container {
+      flex-flow: row wrap;
+    }
+    .platform-container {
+      flex-basis: 500px;
+      flex-grow: 1;
+    }
+
+    .platform-container {
+      margin-top: 30px;
+    }
+    
+    .heading-2 {
+      top: -5px;
+    }
+
+  }
+  
+
